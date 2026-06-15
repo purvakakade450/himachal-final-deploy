@@ -1,0 +1,126 @@
+.site-nav,
+.main-tabs {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.5rem 1rem;
+  background: #0c1222;
+  border-bottom: 1px solid #334155;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.main-tabs button {
+  flex: 1;
+  min-height: 48px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  border: 2px solid #475569;
+  background: var(--bg, #0f172a);
+  color: #94a3b8;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.main-tabs button.active {
+  color: #f8fafc;
+  background: #0c4a6e;
+  border-color: #38bdf8;
+}
+
+.portal-panel {
+  display: none;
+}
+
+.portal-panel.active {
+  display: block;
+}
+
+.portal-main {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 0 6rem;
+}
+
+.panel-intro h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.panel-desc {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.portal-hero .hero-kicker {
+  margin: 0;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #38bdf8;
+}
+
+.portal-hero .hero-ref {
+  margin: 0.35rem 0 0;
+  font-size: 0.72rem;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+.portal-hero .hero-ref a {
+  color: #38bdf8;
+}
+
+.rain-legend-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+
+.rain-legend-row .lg {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.lg-none { background: #334155; color: #cbd5e1; }
+.lg-light { background: #64748b; color: #fff; }
+.lg-mod { background: #38bdf8; color: #0f172a; }
+.lg-heavy { background: #fbbf24; color: #0f172a; }
+.lg-extreme { background: #f87171; color: #fff; }
+
+.dashboard-hint {
+  padding: 0 1rem 1rem;
+  text-align: center;
+}
+
+.card-list {
+  list-style: none;
+  margin: 0 1rem 1rem;
+  padding: 0.75rem 1rem !important;
+}
+
+.card-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #334155;
+  cursor: pointer;
+}
+
+.report-cta {
+  margin: 0 1rem 1rem;
+}
+
+.report-cta h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.report-cta p {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}

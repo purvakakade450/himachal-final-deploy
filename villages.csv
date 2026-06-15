@@ -1,0 +1,149 @@
+id,name,block,district,state,latitude,longitude
+1,Shimla,Shimla,Shimla,Himachal Pradesh,31.1048,77.1734
+2,Rohru,Rohru,Shimla,Himachal Pradesh,31.204,77.751
+3,Theog,Theog,Shimla,Himachal Pradesh,31.12,77.36
+4,Rampur,Rampur,Shimla,Himachal Pradesh,31.45,77.63
+5,Narkanda,Kumarsain,Shimla,Himachal Pradesh,31.27,77.45
+6,Chail,Chail,Shimla,Himachal Pradesh,30.967,77.183
+7,Jubbal,Jubbal,Shimla,Himachal Pradesh,31.12,77.72
+8,Kotkhai,Kotkhai,Shimla,Himachal Pradesh,31.1,77.55
+9,Chopal,Chopal,Shimla,Himachal Pradesh,30.95,77.58
+10,Kumarsain,Kumarsain,Shimla,Himachal Pradesh,31.32,77.46
+11,Nerwa,Nerwa,Shimla,Himachal Pradesh,31.15,77.65
+12,Dodra Kwar,Dodra Kwar,Shimla,Himachal Pradesh,31.2,78.0
+13,Chirgaon,Chirgaon,Shimla,Himachal Pradesh,31.08,77.69
+14,Basantpur,Basantpur,Shimla,Himachal Pradesh,31.25,77.3
+15,Kufri,Shimla,Shimla,Himachal Pradesh,31.099,77.264
+16,Mashobra,Shimla,Shimla,Himachal Pradesh,31.13,77.23
+17,Kasumpti,Shimla,Shimla,Himachal Pradesh,31.09,77.16
+18,Shoghi,Shimla,Shimla,Himachal Pradesh,31.05,77.1
+19,Sanjauli,Shimla,Shimla,Himachal Pradesh,31.095,77.18
+20,Dhalli,Shimla,Shimla,Himachal Pradesh,31.11,77.15
+21,Kullu,Kullu,Kullu,Himachal Pradesh,31.957,77.109
+22,Manali,Kullu,Kullu,Himachal Pradesh,32.2432,77.1892
+23,Naggar,Kullu,Kullu,Himachal Pradesh,32.1089,77.1547
+24,Kasol,Kullu,Kullu,Himachal Pradesh,32.01,77.315
+25,Bhuntar,Kullu,Kullu,Himachal Pradesh,31.876,77.154
+26,Banjar,Banjar,Kullu,Himachal Pradesh,31.64,77.34
+27,Anni,Anni,Kullu,Himachal Pradesh,31.52,77.41
+28,Nirmand,Nirmand,Kullu,Himachal Pradesh,31.57,77.32
+29,Jari,Kullu,Kullu,Himachal Pradesh,31.98,77.35
+30,Sainj,Sainj,Kullu,Himachal Pradesh,31.8,77.38
+31,Manikaran,Kullu,Kullu,Himachal Pradesh,32.03,77.35
+32,Parvati Valley,Kullu,Kullu,Himachal Pradesh,32.05,77.4
+33,Katrain,Kullu,Kullu,Himachal Pradesh,32.08,77.17
+34,Patlikuhl,Kullu,Kullu,Himachal Pradesh,32.06,77.2
+35,Vashisht,Kullu,Kullu,Himachal Pradesh,32.26,77.19
+36,Old Manali,Kullu,Kullu,Himachal Pradesh,32.255,77.175
+37,Solang,Kullu,Kullu,Himachal Pradesh,32.31,77.15
+38,Rohtang,Kullu,Kullu,Himachal Pradesh,32.37,77.24
+39,Mandi,Mandi,Mandi,Himachal Pradesh,31.708,76.931
+40,Sundernagar,Sundernagar,Mandi,Himachal Pradesh,31.532,76.885
+41,Jogindernagar,Jogindernagar,Mandi,Himachal Pradesh,31.99,76.79
+42,Sarkaghat,Sarkaghat,Mandi,Himachal Pradesh,31.72,76.74
+43,Padhar,Padhar,Mandi,Himachal Pradesh,31.88,76.96
+44,Karsog,Karsog,Mandi,Himachal Pradesh,31.39,76.99
+45,Chachyot,Chachyot,Mandi,Himachal Pradesh,31.69,77.09
+46,Gohar,Gohar,Mandi,Himachal Pradesh,31.84,77.0
+47,Seraj,Seraj,Mandi,Himachal Pradesh,31.75,77.1
+48,Aut,Aut,Mandi,Himachal Pradesh,31.85,77.03
+49,Pandoh,Sundernagar,Mandi,Himachal Pradesh,31.67,77.0
+50,Bajaura,Kullu,Mandi,Himachal Pradesh,31.86,77.12
+51,Rewalsar,Mandi,Mandi,Himachal Pradesh,31.64,76.84
+52,Prashar,Mandi,Mandi,Himachal Pradesh,31.87,77.07
+53,Dharamshala,Dharamshala,Kangra,Himachal Pradesh,32.219,76.3234
+54,Palampur,Palampur,Kangra,Himachal Pradesh,32.1109,76.5363
+55,Kangra,Kangra,Kangra,Himachal Pradesh,32.099,76.268
+56,Nurpur,Nurpur,Kangra,Himachal Pradesh,32.297,75.892
+57,Baijnath,Baijnath,Kangra,Himachal Pradesh,32.052,76.649
+58,Nagrota Bagwan,Nagrota Bagwan,Kangra,Himachal Pradesh,32.1,76.45
+59,Indora,Indora,Kangra,Himachal Pradesh,32.23,75.99
+60,Fatehpur,Fatehpur,Kangra,Himachal Pradesh,32.17,75.92
+61,Jawali,Jawali,Kangra,Himachal Pradesh,32.13,76.2
+62,Dehra,Dehra,Kangra,Himachal Pradesh,31.89,76.21
+63,Jawalamukhi,Jawalamukhi,Kangra,Himachal Pradesh,31.873,76.316
+64,Pragpur,Dehra,Kangra,Himachal Pradesh,31.92,76.15
+65,McLeod Ganj,Dharamshala,Kangra,Himachal Pradesh,32.24,76.32
+66,Dharamkot,Dharamshala,Kangra,Himachal Pradesh,32.25,76.31
+67,Bir,Baijnath,Kangra,Himachal Pradesh,32.04,76.72
+68,Billing,Baijnath,Kangra,Himachal Pradesh,32.06,76.74
+69,Andretta,Palampur,Kangra,Himachal Pradesh,32.08,76.57
+70,Shahpur,Shahpur,Kangra,Himachal Pradesh,32.22,76.51
+71,Chamba,Chamba,Chamba,Himachal Pradesh,32.553,76.126
+72,Dalhousie,Dalhousie,Chamba,Himachal Pradesh,32.54,75.98
+73,Khajjiar,Chamba,Chamba,Himachal Pradesh,32.53,76.08
+74,Bharmaur,Bharmaur,Chamba,Himachal Pradesh,32.45,76.53
+75,Tissa,Tissa,Chamba,Himachal Pradesh,32.88,76.25
+76,Churah,Churah,Chamba,Himachal Pradesh,32.85,76.0
+77,Pangi,Pangi,Chamba,Himachal Pradesh,33.05,76.8
+78,Killar,Pangi,Chamba,Himachal Pradesh,33.11,76.83
+79,Salooni,Salooni,Chamba,Himachal Pradesh,32.72,76.3
+80,Banikhet,Dalhousie,Chamba,Himachal Pradesh,32.5,75.95
+81,Kalatop,Dalhousie,Chamba,Himachal Pradesh,32.55,75.97
+82,Solan,Solan,Solan,Himachal Pradesh,30.9045,77.0967
+83,Parwanoo,Solan,Solan,Himachal Pradesh,30.833,76.961
+84,Baddi,Baddi,Solan,Himachal Pradesh,30.96,76.79
+85,Nalagarh,Nalagarh,Solan,Himachal Pradesh,31.04,76.72
+86,Kasauli,Kasauli,Solan,Himachal Pradesh,30.899,76.967
+87,Dharampur,Dharampur,Solan,Himachal Pradesh,30.98,77.02
+88,Kandaghat,Kandaghat,Solan,Himachal Pradesh,30.97,77.12
+89,Arki,Arki,Solan,Himachal Pradesh,31.15,76.96
+90,Kunihar,Kunihar,Solan,Himachal Pradesh,31.18,76.9
+91,Nankhari,Kumarsain,Solan,Himachal Pradesh,31.34,77.4
+92,Chail,Chail,Solan,Himachal Pradesh,30.96,77.18
+93,Nahan,Nahan,Sirmaur,Himachal Pradesh,30.558,77.294
+94,Paonta Sahib,Paonta Sahib,Sirmaur,Himachal Pradesh,30.43,77.62
+95,Rajgarh,Rajgarh,Sirmaur,Himachal Pradesh,30.85,77.39
+96,Sangrah,Sangrah,Sirmaur,Himachal Pradesh,30.8,77.52
+97,Shillai,Shillai,Sirmaur,Himachal Pradesh,30.78,77.58
+98,Renuka,Renuka,Sirmaur,Himachal Pradesh,30.6,77.45
+99,Habban,Habban,Sirmaur,Himachal Pradesh,30.65,77.35
+100,Pachhad,Pachhad,Sirmaur,Himachal Pradesh,30.72,77.3
+101,Hamirpur,Hamirpur,Hamirpur,Himachal Pradesh,31.686,76.521
+102,Nadaun,Nadaun,Hamirpur,Himachal Pradesh,31.78,76.34
+103,Sujanpur,Sujanpur,Hamirpur,Himachal Pradesh,31.83,76.5
+104,Barsar,Barsar,Hamirpur,Himachal Pradesh,31.53,76.45
+105,Bijhari,Bijhari,Hamirpur,Himachal Pradesh,31.67,76.65
+106,Bhoranj,Bhoranj,Hamirpur,Himachal Pradesh,31.7,76.58
+107,Tira Sujanpur,Sujanpur,Hamirpur,Himachal Pradesh,31.83,76.51
+108,Una,Una,Una,Himachal Pradesh,31.468,76.271
+109,Amb,Amb,Una,Himachal Pradesh,31.68,76.12
+110,Haroli,Haroli,Una,Himachal Pradesh,31.55,76.19
+111,Bangana,Bangana,Una,Himachal Pradesh,31.5,76.27
+112,Chintpurni,Chintpurni,Una,Himachal Pradesh,31.76,76.08
+113,Gagret,Gagret,Una,Himachal Pradesh,31.62,76.16
+114,Mehatpur,Mehatpur,Una,Himachal Pradesh,31.48,76.1
+115,Bilaspur,Bilaspur,Bilaspur,Himachal Pradesh,31.33,76.756
+116,Ghumarwin,Ghumarwin,Bilaspur,Himachal Pradesh,31.44,76.72
+117,Swarghat,Swarghat,Bilaspur,Himachal Pradesh,31.4,76.77
+118,Naina Devi,Naina Devi,Bilaspur,Himachal Pradesh,31.37,76.64
+119,Berthin,Berthin,Bilaspur,Himachal Pradesh,31.3,76.65
+120,Jhandutta,Jhandutta,Bilaspur,Himachal Pradesh,31.55,76.76
+121,Reckong Peo,Kalpa,Kinnaur,Himachal Pradesh,31.538,78.275
+122,Kalpa,Kalpa,Kinnaur,Himachal Pradesh,31.53,78.26
+123,Sangla,Sangla,Kinnaur,Himachal Pradesh,31.42,78.24
+124,Chitkul,Sangla,Kinnaur,Himachal Pradesh,31.35,78.45
+125,Moorang,Moorang,Kinnaur,Himachal Pradesh,31.68,78.38
+126,Pooh,Pooh,Kinnaur,Himachal Pradesh,31.78,78.65
+127,Nako,Pooh,Kinnaur,Himachal Pradesh,31.87,78.66
+128,Nichar,Nichar,Kinnaur,Himachal Pradesh,31.5,77.95
+129,Sapni,Kalpa,Kinnaur,Himachal Pradesh,31.52,78.2
+130,Ribba,Pooh,Kinnaur,Himachal Pradesh,31.75,78.58
+131,Keylong,Keylong,Lahaul and Spiti,Himachal Pradesh,32.571,77.028
+132,Kaza,Kaza,Lahaul and Spiti,Himachal Pradesh,32.22,78.07
+133,Spiti,Kaza,Lahaul and Spiti,Himachal Pradesh,32.22,78.05
+134,Udaipur,Udaipur,Lahaul and Spiti,Himachal Pradesh,32.72,76.67
+135,Tabo,Kaza,Lahaul and Spiti,Himachal Pradesh,32.09,78.38
+136,Pin Valley,Kaza,Lahaul and Spiti,Himachal Pradesh,32.05,78.28
+137,Losar,Kaza,Lahaul and Spiti,Himachal Pradesh,32.46,78.18
+138,Trilokinath,Udaipur,Lahaul and Spiti,Himachal Pradesh,32.63,76.72
+139,Sissu,Keylong,Lahaul and Spiti,Himachal Pradesh,32.47,77.15
+140,Jispa,Keylong,Lahaul and Spiti,Himachal Pradesh,32.66,77.28
+141,Darcha,Keylong,Lahaul and Spiti,Himachal Pradesh,32.73,77.37
+142,Kibber,Kaza,Lahaul and Spiti,Himachal Pradesh,32.38,78.02
+143,Langza,Kaza,Lahaul and Spiti,Himachal Pradesh,32.35,78.07
+144,Komic,Kaza,Lahaul and Spiti,Himachal Pradesh,32.4,78.04
+145,Hikkim,Kaza,Lahaul and Spiti,Himachal Pradesh,32.38,78.06
+146,Demul,Kaza,Lahaul and Spiti,Himachal Pradesh,32.36,78.01
+147,Lhalung,Kaza,Lahaul and Spiti,Himachal Pradesh,31.92,78.3
+148,Dhankar,Kaza,Lahaul and Spiti,Himachal Pradesh,32.08,78.18

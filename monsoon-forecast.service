@@ -1,0 +1,15 @@
+[Unit]
+Description=Monsoon Forecast Web Portal
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/monsoon-forecast-portal
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/var/www/monsoon-forecast-portal/.venv/bin/python run.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

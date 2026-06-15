@@ -1,0 +1,17 @@
+import pandas as pd
+
+# Create sample financial data
+data = {
+    "Month": ["Jan", "Feb", "Mar", "Apr", "May"],
+    "Revenue": [10000, 12000, 15000, 14000, 18000],
+    "Expenses": [7000, 8000, 9500, 9000, 11000],
+    "Profit": [3000, 4000, 5500, 5000, 7000]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Write data to Excel
+df.to_excel("output.xlsx", index=False)
+
+print("Data successfully written to output.xlsx")

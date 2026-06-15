@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <title>HP Monsoon Portal · IIT Bombay</title>
+  <link rel="stylesheet" href="/static/css/styles.css"/>
+  <link rel="stylesheet" href="/static/css/map.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+</head>
+<body>
+
+<!-- ══ TOPBAR — slim, always on top ══════════════════════════════════════ -->
+<header class="topbar">
+  <div class="tb-left">
+    <a href="https://www.iitb.ac.in" target="_blank" rel="noopener">
+      <img src="/static/iitb_logo.png" alt="IIT Bombay" class="tb-logo"/>
+    </a>
+    <div class="tb-text">
+      <span class="tb-name">🏔️ HP Monsoon Portal</span>
+      <span class="tb-sub">Centre for Climate Studies · IIT Bombay</span>
+    </div>
+  </div>
+  <div class="tb-mid">
+    <span id="meta-updated" class="live-clock"></span>
+  </div>
+  <div class="tb-right">
+    <nav class="tabnav" role="tablist">
+      <button role="tab" class="tab active" data-panel="panel-rainfall"  aria-selected="true" data-i18n="tabRainfall">🌧️ Rainfall</button>
+      <button role="tab" class="tab"        data-panel="panel-reported"  aria-selected="false" data-i18n="tabFloods">📍 Floods</button>
+      <button role="tab" class="tab"        data-panel="panel-about"     aria-selected="false" data-i18n="tabAbout">ℹ️ About</button>
+    </nav>
+    <div class="lang-toggle">
+      <button id="lang-en" class="active">EN</button>
+      <button id="lang-hi">हिं</button>
+    </div>
+    <a href="https://climatechange.iitb.ac.in" target="_blank" rel="noopener" title="Climate Studies IIT Bombay">
+      <img src="/static/climate_logo.png" alt="Climate Studies" class="tb-logo tb-logo-sm"/>
+    </a>
+  </div>
+</header>
+
+<!-- ══ APP — full remaining height ═══════════════════════════════════════ -->
+<div class="app">
+  <div id="error-box" class="error-toast hidden" role="alert"></div>
+  <div id="db-banner" class="warn-banner hidden" role="status"></div>
+
+  <!-- ════ RAINFALL PANEL ════════════════════════════════════════════════
+       Map fills 100% screen. Floating left panel for search+forecast.
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section id="panel-rainfall" class="panel active" role="tabpanel">
+
+    <!-- Full-screen precipitation map -->
+    <div id="precip-village-map" class="map-bg"></div>
+
+    <!-- Floating left panel -->
+    <aside class="float-panel" id="float-panel">
+      <div class="fp-header">
+        <span class="fp-title" data-i18n="villageForecast">Village Forecast</span>
+        <button class="fp-collapse" id="fp-collapse-btn" title="Collapse">‹</button>
+      </div>
+
+      <!-- Search -->
+      <div id="search-panel" class="fp-section">
+        <div class="search-row">
+          <input id="village-search" type="search" autocomplete="off"
+            class="search-inp" placeholder="Search village…" data-i18n="searchPlaceholder"/>
+          <button id="btn-gps" class="icon-btn" title="GPS">📍</button>
+        </div>
+        <ul id="suggestions" class="suggestions"></ul>
+      </div>
+
+      <!-- Forecast (hidden until village selected) -->
+      <div id="dashboard" class="dashboard fp-section" aria-live="polite">
+        <div class="village-hd">
+          <div>
+            <div id="village-name" class="vname"></div>
+            <div id="village-meta" class="vmeta"></div>
+            <div id="forecast-updated" class="ts"></div>
+          </div>
+          <button id="btn-change-village" class="chip-btn">✕</button>
+        </div>
+
+        <div id="alert-banner" class="alert-banner"></div>
+
+        <div class="stat-row">
+          <div class="stat-box">
+            <span class="sv" id="today-temp-min">—</span>
+            <span class="sl" data-i18n="minTemp">Min °C</span>
+          </div>
+          <div class="stat-box">
+            <span class="sv" id="today-temp-max">—</span>
+            <span class="sl" data-i18n="maxTemp">Max °C</span>
+          </div>
+          <div class="stat-box hi">
+            <span class="sv" id="today-rain">—</span>
+            <span class="sl" data-i18n="rainMm">Rain mm</span>
+          </div>
+        </div>
+        <div class="trend-badge" id="today-trend"></div>
+        <span class="clim-badge" id="today-clim" style="display:none"></span>
+
+        <div class="chart-section">
+          <p class="chart-lbl" data-i18n="rainBlocksLbl">🌧️ Rain forecast (next 6 days)</p>
+          <div class="cw"><canvas id="precip-chart"></canvas></div>
+        </div>
+        <div class="chart-section">
+          <p class="chart-lbl" data-i18n="sixDayOutlook">📆 6-Day Outlook</p>
+          <div id="outlook-tabs" class="outlook-tabs"></div>
+          <div class="trend-badge" id="outlook-trend"></div>
+          <span class="clim-badge" id="outlook-clim" style="display:none"></span>
+          <div class="stat-row" style="margin-top:4px">
+            <div class="stat-box"><span class="sv" id="outlook-temp-min">—</span><span class="sl" data-i18n="minTemp">Min °C</span></div>
+            <div class="stat-box"><span class="sv" id="outlook-temp-max">—</span><span class="sl" data-i18n="maxTemp">Max °C</span></div>
+            <div class="stat-box hi"><span class="sv" id="outlook-rain">—</span><span class="sl" data-i18n="rainMm">Rain mm</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="hint" id="search-hint" data-i18n="searchHint">↑ Search or tap a village on map</p>
+      <p class="loading hidden" id="loading" data-i18n="loading">Loading…</p>
+    </aside>
+
+    <!-- Map overlay controls (top-right of map) -->
+    <div class="map-overlay-top">
+      <!-- Day selector -->
+      <div class="day-bar" id="precip-day-tabs"></div>
+      <p id="precip-loading" class="overlay-status hidden" data-i18n="loadingOverlay">Loading villages…</p>
+    </div>
+
+    <!-- Legend (bottom of map) — Mumbai-Flood style rainfall categories -->
+    <div id="precip-colour-bar"></div>
+  </section>
+
+  <!-- ════ FLOODS PANEL ══════════════════════════════════════════════════
+       Full-screen map. Floating controls top-left.
+  ═══════════════════════════════════════════════════════════════════════ -->
+  <section id="panel-reported" class="panel" role="tabpanel" hidden>
+
+    <div id="hp-map" class="map-bg"></div>
+
+    <!-- Floating flood controls -->
+    <div class="float-panel float-panel-sm">
+      <div class="fp-header">
+        <span class="fp-title" data-i18n="floodReportsTitle">Flood Reports</span>
+      </div>
+      <div class="fp-section">
+        <div class="filter-row">
+          <button class="active" data-period="today" data-i18n="periodToday">Today</button>
+          <button data-period="7d" data-i18n="period7d">7 Days</button>
+          <button data-period="all" data-i18n="periodAll">All</button>
+        </div>
+        <p id="report-count" class="ts" style="margin-top:5px"></p>
+      </div>
+      <ul id="report-list" class="report-list fp-section"></ul>
+      <div class="fp-section">
+        <button id="btn-toggle-form" class="btn-danger" data-i18n="reportFlood">+ Report flood / landslide</button>
+        <form id="report-form" class="report-form hidden">
+          <label data-i18n="whatHappened">What happened?</label>
+          <select id="report-type" required>
+            <option value="flood" data-i18n="typeFlood">Flood / river overflow</option>
+            <option value="waterlogging" data-i18n="typeWaterlogging">Waterlogging</option>
+            <option value="landslide" data-i18n="typeLandslide">Landslide / debris</option>
+            <option value="road_blocked" data-i18n="typeRoadBlocked">Road blocked</option>
+            <option value="cloudburst" data-i18n="typeCloudburst">Cloudburst</option>
+          </select>
+          <label data-i18n="severityLabel">Severity</label>
+          <select id="report-severity">
+            <option value="low" data-i18n="severityLow">Low</option>
+            <option value="moderate" selected data-i18n="severityModerate">Moderate</option>
+            <option value="high" data-i18n="severityHigh">High</option>
+          </select>
+          <label data-i18n="villageOptional">Village (optional)</label>
+          <input id="report-village-search" type="search" placeholder="Search village…" autocomplete="off" data-i18n="searchPlaceholder"/>
+          <ul id="report-village-suggestions" class="suggestions" style="max-height:80px"></ul>
+          <label data-i18n="noteOptional">Note (optional)</label>
+          <textarea id="report-note" maxlength="280" placeholder="e.g. Bridge submerged" data-i18n="notePlaceholder"></textarea>
+          <button type="submit" class="btn-primary" data-i18n="submit">Submit</button>
+          <p id="report-status" class="ts" style="margin-top:4px"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Severity legend -->
+    <div class="map-legend-bar">
+      <span class="leg-item"><span class="ld" style="background:#ef4444"></span><span data-i18n="legendHigh">High</span></span>
+      <span class="leg-item"><span class="ld" style="background:#f97316"></span><span data-i18n="legendModerate">Moderate</span></span>
+      <span class="leg-item"><span class="ld" style="background:#94a3b8"></span><span data-i18n="legendLow">Low</span></span>
+    </div>
+  </section>
+
+  <!-- ════ ABOUT PANEL ═══════════════════════════════════════════════════ -->
+  <section id="panel-about" class="panel about-panel" role="tabpanel" hidden>
+    <article class="about-card">
+      <div class="about-logos">
+        <img src="/static/iitb_logo.png" alt="IIT Bombay" class="ab-logo"/>
+        <img src="/static/climate_logo.png" alt="Climate Studies" class="ab-logo ab-logo-wide"/>
+      </div>
+      <h2 data-i18n="aboutTitle">About HP Monsoon Portal</h2>
+      <p class="ap" data-i18n-html="aboutIntro">Research initiative by <strong>Centre for Climate Studies, IIT Bombay</strong> — real-time rainfall forecasts &amp; community flood reporting for Himachal Pradesh villages.</p>
+      <div class="about-grid">
+        <div>
+          <h3 data-i18n="objectivesTitle">🎯 Objectives</h3>
+          <ul class="al">
+            <li data-i18n="objective1">Village-level real-time forecasts via Open-Meteo</li>
+            <li data-i18n-html="objective2">Community flood &amp; landslide reporting on satellite map</li>
+            <li data-i18n="objective3">Early warning for mountain communities during monsoon</li>
+            <li data-i18n="objective4">Climate resilience research for the Himalayan region</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="dataSourcesTitle">🛰️ Data Sources</h3>
+          <ul class="al">
+            <li data-i18n-html="dataSourceWeather"><strong>Weather:</strong> <a href="https://open-meteo.com" target="_blank">Open-Meteo</a> — real-time, free</li>
+            <li data-i18n-html="dataSourceSatellite"><strong>Satellite:</strong> Esri World Imagery</li>
+            <li data-i18n-html="dataSourceTerrain"><strong>Terrain:</strong> Esri World Shaded Relief</li>
+            <li data-i18n-html="dataSourceMaps"><strong>Maps:</strong> OpenStreetMap contributors</li>
+          </ul>
+        </div>
+      </div>
+      <p class="ap" style="font-size:12px;color:#64748b;margin-top:12px" data-i18n="aboutDisclaimer">⚠️ Forecasts from numerical models — always follow official IMD advisories.</p>
+    </article>
+  </section>
+
+</div><!-- /app -->
+
+<!-- Feedback bar -->
+<footer class="fb-bar is-disabled" id="feedback-footer">
+  <span class="fb-lbl" data-i18n="feedbackPrompt">Is the forecast right for your field?</span>
+  <div class="fb-btns">
+    <button data-rating="accurate">👍 <span data-i18n="accurate">Accurate</span></button>
+    <button data-rating="too_dry">🌧️ <span data-i18n="tooDry">Too dry</span></button>
+    <button data-rating="too_wet">☀️ <span data-i18n="tooWet">Too wet</span></button>
+  </div>
+  <p class="ts" id="feedback-status"></p>
+</footer>
+
+<!-- Mobile bottom nav -->
+<nav class="mobile-tabnav" role="tablist">
+  <button role="tab" class="mtab active" data-panel="panel-rainfall"><span class="micon">🌧️</span><span data-i18n="navRainfall">Rainfall</span></button>
+  <button role="tab" class="mtab"        data-panel="panel-reported"><span class="micon">📍</span><span data-i18n="navFloods">Floods</span></button>
+  <button role="tab" class="mtab"        data-panel="panel-about"><span class="micon">ℹ️</span><span data-i18n="navAbout">About</span></button>
+</nav>
+
+<script type="module" src="/static/js/portal.js"></script>
+</body>
+</html>
